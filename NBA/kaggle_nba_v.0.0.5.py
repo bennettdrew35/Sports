@@ -48,11 +48,9 @@ sec_df2 = sec_df.merge(sec_std, on='teamAbbr')
 sec_df3 = sec_df2.merge(sec_mean, on='teamAbbr')
 sec_df3['diff_From_Mean'] = (sec_df3['sec_Half_PTS'] - sec_df3['sec_Half_PTS_Mean']).abs()
 sec_df3.to_excel(writer, sheet_name='Second_Half', index=False)
-print(sec_df3.head())
 """
 Full Game
 """
-
 full_col = ['game_Time', 'teamAbbr', 'teamLoc', 'teamRslt',
             'teamPTS1', 'teamPTS2', 'teamPTS3', 'teamPTS4', 'teamPTS5', 'teamPTS6', 'teamPTS7', 'teamPTS8']
 full_df = df2[full_col]
@@ -64,8 +62,6 @@ full_df2 = full_df.merge(full_std, on='teamAbbr')
 full_df3 = full_df2.merge(full_mean, on='teamAbbr')
 full_df3['diff_From_Mean'] = (full_df3['full_Game_PTS'] - full_df3['full_Game_PTS_Mean']).abs()
 full_df3.to_excel(writer, sheet_name='Full_Game', index=False)
-print(full_df3.head())
-
 """
 Regulation Time
 """
